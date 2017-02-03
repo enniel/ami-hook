@@ -2,7 +2,7 @@
 
 namespace Enniel\AmiHook;
 
-use Illuminate\Support\ServiceProvider;
+use Mpociot\CaptainHook\CaptainHookServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Config;
 
 class AmiHookServiceProvider extends ServiceProvider
@@ -15,6 +15,7 @@ class AmiHookServiceProvider extends ServiceProvider
     public function boot()
     {
         Config::set('captain_hook.listeners.AMI', 'ami.events.*');
+        parent::boot();
     }
 
     /**
@@ -25,6 +26,6 @@ class AmiHookServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(\Enniel\Ami\Providers\AmiServiceProvider::class);
-        $this->app->register(\Mpociot\CaptainHook\CaptainHookServiceProvider::class);
+        parent::register();
     }
 }
