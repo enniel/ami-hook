@@ -1,0 +1,50 @@
+{
+    "name": "enniel/ami-hook",
+    "type": "library",
+    "description": "Webhook API for Asterisk AMI",
+    "keywords": [
+        "enniel",
+        "ami-hook"
+    ],
+    "homepage": "https://github.com/enniel/ami-hook",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Evgeny Razumov",
+            "email": "razumov.evgeni@gmail.com",
+            "homepage": "https://github.com/enniel",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/enniel/captainhook"
+        }
+    ],
+    "require": {
+        "php": "~5.6|~7.0",
+        "enniel/ami": "~2.1.0",
+        "illuminate/config": "~5.1",
+        "illuminate/contracts": "~5.1",
+        "illuminate/http": "~5.1",
+        "illuminate/routing": "~5.1",
+        "illuminate/support": "~5.1",
+        "mpociot/captainhook": "dev-patch-issue-42"
+    },
+    "autoload": {
+        "psr-4": {
+            "Enniel\\AmiHook\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
