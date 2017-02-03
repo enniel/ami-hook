@@ -18,8 +18,10 @@ class AmiHook
         $callback = $callback ?: function ($router) {
             $router->all();
         };
+        if (! array_key_exists('middleware', $options)) {
+            $options['middleware'] = 'auth';
+        };
         $options = array_merge($options, [
-            'middleware' => 'auth',
             'namespace' => '\Enniel\AmiHook\Http\Controllers',
         ]);
         Route::group($options, function ($router) use ($callback) {
