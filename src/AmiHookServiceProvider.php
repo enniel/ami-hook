@@ -14,7 +14,7 @@ class AmiHookServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Config::push('captain_hook.listeners', 'ami.events.*');
+        Config::set('captain_hook.listeners.AMI', 'ami.events.*');
     }
 
     /**
